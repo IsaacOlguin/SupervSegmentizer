@@ -1,27 +1,35 @@
 import React from "react";
 import "./Login.css";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 export default function Login(){
     return (
         <div className="login-wrapper">
-            <h3>Please login</h3>
-            <form>
-                <label>
-                    <p>Username</p>
-                    <input type="text" />
-                </label>
+            <Header />
 
-                <label>
-                    <p>Password</p>
-                    <input type="password"/>
-                </label>
+            <body>
+                <h3>Please login</h3>
+                <form>
+                    <label>
+                        <p>Username</p>
+                        <input type="text" />
+                    </label>
 
-                <p></p>
+                    <label>
+                        <p>Password</p>
+                        <input type="password"/>
+                    </label>
 
-                <div>
-                    <center><button type="submit">Submit</button></center>
-                </div>
-            </form>
+                    <p></p>
+
+                    <div>
+                        <center><button type="submit">Login</button></center>
+                    </div>
+                </form>
+            </body>
+
+            <Footer />
         </div>
     );
 }

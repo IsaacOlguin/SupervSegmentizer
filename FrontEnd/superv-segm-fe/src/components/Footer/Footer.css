@@ -1,0 +1,11 @@
+footer {
+    text-align: center;
+    padding: 5px;
+    background-color: rgba(86, 176, 228, 0.596);
+    color: black;
+    width: 100%; /*Fills all page bottom how it's indicated at the end*/
+    display:block; /*Not necessary*/
+    position: absolute; /*Wichtig*/
+    bottom: 0; /*This is the one which places the footer at the bottom*/
+    height: 10%;
+}

@@ -1,0 +1,11 @@
+header {
+    text-align: center;
+    padding: 5px;
+    background-color: rgba(86, 176, 228, 0.596);
+    color: black;
+    width: 100%; 
+    display:block; 
+    position: absolute; 
+    top: 0; 
+    height: 10%;
+}

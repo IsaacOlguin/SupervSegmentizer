@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 
 import React, { useState } from 'react';
@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom' //Switch was rep
 import Dashboard from './components/Dashboard/Dashboard';
 import About from './components/About/About';
 import Login from './components/Login/Login';
+//import Footer from './components/Footer/Footer';
 
 function App() {
   const [ token, setToken ] = useState();
@@ -25,7 +26,6 @@ function App() {
         </Routes>
       </BrowserRouter>
     </div>
-
   );
 }
 
