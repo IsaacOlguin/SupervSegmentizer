@@ -9,7 +9,9 @@ export default function Login(){
             <Header />
 
             <body>
-                <h3>Please login</h3>
+                <center>
+                    <h3>Please login</h3>
+                </center>
                 <form>
                     <label>
                         <p>Username</p>
