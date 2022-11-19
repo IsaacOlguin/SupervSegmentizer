@@ -1,6 +1,8 @@
 // General components 
 import React, { useState } from "react";
 import PropTypes from 'prop-types';
+import Button from '@mui/material/Button';
+import { Snackbar, Alert } from "@mui/material";
 // CSS
 import "./Login.css";
 // Own Components
@@ -25,11 +27,16 @@ export default function Login({ setToken }){
     const [username, setUserName] = useState();
     const [password, setPassword] = useState();
 
+    const [isSnackbarVisible, setSnackbarVisible] = useState(false);
+    const [messageAlert, setMessageAlert] = useState("");
+
     const handleSubmit = async e => {
         e.preventDefault();
 
         if (FunctUtilities.isStringEmpty(username)  || FunctUtilities.isStringEmpty(password === "")){
-            alert("You have to enter your login and password.");
+            //alert("You have to enter your login and password.");
+            setMessageAlert("You have to enter your login and password.");
+            setSnackbarVisible(true);
         } else {
             const token = await loginUser({
                 username, password
@@ -46,7 +53,7 @@ export default function Login({ setToken }){
                 <center>
                     <h3>Please login</h3>
                 </center>
-                <form onSubmit={handleSubmit}>
+                <form>
                     <label>
                         <p>Username</p>
                         <input type="text" onChange={e => setUserName(e.target.value)} />
@@ -60,10 +67,32 @@ export default function Login({ setToken }){
                     <p></p>
 
                     <div>
-                        <center><button type="submit">Login</button></center>
+                        <center>
+                            <Button variant="outlined" onClick={handleSubmit}>
+                                Login
+                            </Button>
+                            
+                            <br /><br />
+                        </center>
                     </div>
                 </form>
             </body>
+            <Snackbar
+                open={isSnackbarVisible}
+                autoHideDuration={5000}
+                onClose={() => setSnackbarVisible(false)}
+            >
+                <Alert
+                    severity={'warning'}
+                    sx={{ width: '100%' }}
+                    onClose={() => { 
+                        setMessageAlert("");
+                        setSnackbarVisible(false);
+                    }}
+                    >
+                    {messageAlert}
+                </Alert>
+            </Snackbar>
 
             <Footer />
         </div>
