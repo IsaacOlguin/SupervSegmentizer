@@ -1,16 +1,16 @@
 //import logo from './logo.svg';
 import './App.css';
 
-import React, { useState } from 'react';
+import React from 'react';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom' //Switch was replaced in newer versions by Routes
 import Dashboard from './components/Dashboard/Dashboard';
 import About from './components/About/About';
 import Login from './components/Login/Login';
-//import Footer from './components/Footer/Footer';
+import useToken from './components/App/useToken';
 
 function App() {
-  const [ token, setToken ] = useState();
+  const { token, setToken } = useToken();
 
   if (!token) {
     return <Login setToken={setToken} />
@@ -30,28 +30,3 @@ function App() {
 }
 
 export default App;
-
-
-    /*<div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>*/
-
-    /*<Route path="/dashboard">
-            <Dashboard />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>*/
