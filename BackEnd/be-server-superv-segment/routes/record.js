@@ -7,7 +7,7 @@ const dbo = require("../db/connection_db");
 const ObjectId = require("mongodb").ObjectId;
 
 
-recordRoutes.route("/listUsers").get(async function(req, res){
+recordRoutes.route("/listUsers").get(function(req, res){
     const dbConnect = dbo.getDB("test");
 
     dbConnect.collection("users").find({}).toArray(function(err, result) {
@@ -16,3 +16,5 @@ recordRoutes.route("/listUsers").get(async function(req, res){
         res.json(result);
     });
 });
+
+module.exports = recordRoutes;
