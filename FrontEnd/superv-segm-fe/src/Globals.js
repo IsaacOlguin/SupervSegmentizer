@@ -9,6 +9,8 @@ const Globals = {
 
     HTTP_CONTENT_TYPE : "Content-Type",
     HTTP_CONTENT_TYPE_APP_JSON : "application/json",
+
+    CRYPTO_NONCE : "2022"
 };
 
 export default Globals;

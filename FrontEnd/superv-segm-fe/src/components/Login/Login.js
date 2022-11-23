@@ -11,6 +11,7 @@ import Footer from "../Footer/Footer";
 // Globals
 import Globals from "../../Globals";
 import FunctUtilities from "../../utilities/functUtilities";
+import CryptoUtilities from "../../utilities/cryptoUtilities"
 
 async function loginUser(credentials) {
     return fetch(
@@ -39,7 +40,7 @@ export default function Login({ setToken }){
             setSnackbarVisible(true);
         } else {
             const token = await loginUser({
-                username, password
+                username, "password": CryptoUtilities.hashSHA256wN(password)
             });
             setToken(token);
         }
