@@ -9,6 +9,7 @@ const PORT_BE_APP = process.env.SERVER_PORT || 8080;
 app.use(cors());
 app.use(express.json());
 app.use(require("./routes/record"));
+app.use(require("./routes/auth"));
 
 const dbo = require("./db/connection_db");
 
