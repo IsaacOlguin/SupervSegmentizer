@@ -8,6 +8,8 @@ export interface IUser extends Document {
     valid_until: Date;
     token?: string;
     failed_attemps: number;
+    is_blocked: boolean;
+    blocking_date?: Date;
 }
 
 const userSchema = new Schema<IUser>(
@@ -21,7 +23,9 @@ const userSchema = new Schema<IUser>(
             ref: "File" 
         }],
         valid_until: { type: Date, required: true},
-        failed_attemps: { type: Schema.Types.Number, required: true }
+        failed_attemps: { type: Schema.Types.Number, required: true },
+        is_blocked: { type: Boolean, required: true },
+        blocking_date: { type: Date, required: false }
     }
 );
 
