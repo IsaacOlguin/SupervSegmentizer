@@ -13,18 +13,6 @@ app.use(require("./routes/auth"));
 
 const dbo = require("./db/connection_db");
 
-//const recordRoutes = express.Router();
-
-/*
-app.use("/login", (req, res) => {
-    console.log("/login");
-
-    res.send({
-        token: "test_token"
-    });
-});
-*/
-
 app.listen(PORT_BE_APP, () => {
     dbo.connectToServer(function(err) {
         if (err) console.error(err);
